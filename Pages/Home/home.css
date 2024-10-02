@@ -1,0 +1,16 @@
+/* 
+#DEF9C4 : very light
+#9CDBA6 : light
+#50B498 : turqoise
+#468585 : dark
+*/
+
+body {
+  background-color: #def9c4;
+}
+
+#tes {
+  background-color: white;
+  width: 10rem;
+  height: 10rem;
+}
