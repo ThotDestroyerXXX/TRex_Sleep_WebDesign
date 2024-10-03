@@ -25,10 +25,9 @@ body {
 
 .landing-page-container {
   position: relative;
-  width: 100%;
-  max-width: 100vw;
-  overflow: hidden;
+  width: 100vw;
   height: 100vh;
+  overflow: hidden;
   background: radial-gradient(#ffffff 0%, rgba(0, 0, 0, 0.2) 80%);
 }
 
@@ -37,11 +36,11 @@ body {
   font-family: "Geologica", sans-serif;
   font-size: 4em;
   line-height: 0.9;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: #222222;
+  color: white;
 }
 
 .title-text h2 {
@@ -50,4 +49,61 @@ body {
 
 .title-text h1 {
   font-weight: 700;
+}
+
+#bg-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+#moon {
+  position: absolute;
+  width: 8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 10%;
+}
+
+#cliff-left {
+  position: absolute;
+  width: 35rem;
+  bottom: 0;
+  left: 0;
+  z-index: 50;
+}
+
+#cliff-right {
+  position: absolute;
+  width: 32rem;
+  bottom: 5%;
+  right: 0;
+  z-index: 100;
+}
+
+#cliff-adventure {
+  position: absolute;
+  width: 12rem;
+  left: 32.5%;
+  bottom: 19.8%;
+  z-index: 40;
+}
+
+#adventure {
+  position: absolute;
+  width: 7rem;
+  bottom: 10.5%;
+  left: 39.5%;
+  z-index: 60;
+}
+
+#rock-adventure {
+  position: absolute;
+  width: 14rem;
+  bottom: 12%;
+  right: 29.6%;
+  z-index: 40;
 }
