@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: url('dino2.cur'),auto;
+    scrollbar-width: none;
+}
+
+.page{
+    width: 100vw;
+    height: 110vh;
+    background-color: rgb(144, 36, 36);
+    display: flex;
+    justify-content: center;
+}
+
+.container{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    border: 1px solid black;
+}
