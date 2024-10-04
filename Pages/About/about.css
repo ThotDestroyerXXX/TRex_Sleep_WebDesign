@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    scrollbar-width : none;
 }
 
 body {
@@ -10,7 +11,7 @@ body {
 
 section{
     height: 100vh;
-    width: 100%;
+    width: 100vw;
     border: 2px solid #a78a6d;
 }
 
@@ -21,8 +22,8 @@ section{
 }
 
 .mission{
-    width: 40rem;
-    height: 20rem;
+    width: 40vw;
+    height: 30vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -47,4 +48,92 @@ section{
     width: 35rem;
     height: 10rem;
     text-align: center;
+}
+
+.second {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #9CDBA6;
+    height: 55vh;
+    width: 45vw;
+    border-radius: 40px;
+    left: 12.5vw;
+    transition: transform 1s ease, background-color 1s ease;
+}
+
+.container h1 {
+    font-size: 4.5rem;
+    text-align: center;
+    padding: 3vw;
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+.container p {
+    padding: 3vw;
+    font-size: 1.75rem;
+    text-align: center;
+    position: absolute;
+    transform: scale(0);
+    transition: transform 1s ease, opacity 1s ease;
+    opacity: 0;
+}
+
+.container:hover h1 {
+    transform: scale(0);
+    opacity: 0;
+}
+
+.container:hover p {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.third{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 7.5vh;
+}
+
+.row{
+    justify-content: space-between;
+    width: 90vw;
+    height: 40vh;
+    display: flex;
+}
+
+.rowCont{
+    width: 27.5vw;    
+    height: 40vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 3vh;
+}
+
+.pic{
+    width: auto;
+    height: 18vh;
+    /* background-color: aqua; */
+    margin-bottom: 1vh;
+}
+
+.desc{
+    width: auto;
+    height: 17vh;
+    margin-top: 1vh;
+    text-align: justify;
+}
+
+.desc h2{
+    margin-bottom: 3vh;
 }
