@@ -23,6 +23,16 @@ body {
   height: 10rem;
 }
 
+/* .dark-corner {
+  position: absolute;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0) 65%, rgba(0, 0, 0, 1));
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+} */
+
 .landing-page-container {
   position: relative;
   width: 100vw;
@@ -38,7 +48,6 @@ body {
   line-height: 0.9;
   top: 40%;
   left: 50%;
-  transform: translate(-50%, -50%);
   text-align: center;
   color: white;
 }
@@ -51,7 +60,7 @@ body {
   font-weight: 700;
 }
 
-#bg-img {
+.bg-img {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -60,50 +69,54 @@ body {
   object-fit: cover;
 }
 
-#moon {
+.moon {
   position: absolute;
   width: 8rem;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 10%;
+  left: 50.2%;
+  top: 19%;
 }
 
-#cliff-left {
+.cliff-left {
   position: absolute;
   width: 35rem;
-  bottom: 0;
-  left: 0;
+  bottom: -50%;
+  left: 18.2%;
   z-index: 50;
 }
 
-#cliff-right {
+.cliff-right {
   position: absolute;
   width: 32rem;
-  bottom: 5%;
-  right: 0;
+  bottom: -42.5%;
+  right: -16.7%;
   z-index: 100;
 }
 
-#cliff-adventure {
+.cliff-adventure {
   position: absolute;
   width: 12rem;
-  left: 32.5%;
-  bottom: 19.8%;
+  left: 38.8%;
+  bottom: 1.5%;
   z-index: 40;
 }
 
-#adventure {
+.adventure {
   position: absolute;
-  width: 7rem;
-  bottom: 10.5%;
-  left: 39.5%;
+  width: 7.05rem;
+  bottom: -4.8%;
+  left: 43.25%;
   z-index: 60;
 }
 
-#rock-adventure {
+.rock-adventure {
   position: absolute;
   width: 14rem;
-  bottom: 12%;
-  right: 29.6%;
+  bottom: -0.2%;
+  right: 22.4%;
   z-index: 40;
+}
+
+.parallax {
+  pointer-events: none;
+  transform: translate(-50%, -50%);
 }
