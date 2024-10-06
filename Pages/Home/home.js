@@ -83,7 +83,7 @@ timeLine
       x: -1000,
       duration: 2.5,
     },
-    "0"
+    "1"
   )
   .from(
     ".cliff-right",
@@ -91,7 +91,7 @@ timeLine
       x: 1000,
       duration: 2.5,
     },
-    "0"
+    "1"
   )
   .from(
     ".adventure",
@@ -124,4 +124,20 @@ timeLine
       duration: 1.5,
     },
     "3"
+  )
+  .from(
+    ".bg-img",
+    {
+      y: "200%",
+      duration: 2.5,
+    },
+    "0"
+  )
+  .from(
+    ".home-floor",
+    {
+      y: "100%",
+      duration: 2.5,
+    },
+    "1"
   );
