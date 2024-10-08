@@ -36,10 +36,72 @@ window.addEventListener("mousemove", (e) => {
   updateParallax(e.clientX);
 });
 
+let prevScroll = window.scrollY;
+const titleTexts = document.querySelector(".title-text");
+const cliffLeft = document.querySelector(".cliff-left");
+
+const cliffRight = document.querySelector(".cliff-right");
+const cliffAd = document.querySelector(".cliff-adventure");
+const ad = document.querySelector(".adventure");
+const homeFloor = document.querySelector(".home-floor");
+const rockAd = document.querySelector(".rock-adventure");
+const initialCliffLeft = parseFloat(getComputedStyle(cliffLeft).left);
+const initialCliffAd = getComputedStyle(cliffAd).bottom;
+const initialAd = parseFloat(getComputedStyle(ad).bottom);
+const initialRockAd = parseFloat(getComputedStyle(rockAd).bottom);
+const initialCliffRight = parseFloat(getComputedStyle(cliffRight).right);
+const initialHomeFloor = parseFloat(getComputedStyle(homeFloor).top);
 window.addEventListener("scroll", () => {
-  const titleTexts = document.querySelector(".title-text");
   let valueY = window.scrollY + window.innerWidth / 2;
+  let valY = window.scrollY;
   titleTexts.style.left = valueY + "px";
+  if (initialCliffLeft < 0 && prevScroll < valY) {
+    cliffLeft.style.left = initialCliffLeft - valY * 0.9 + "px";
+  } else if (initialCliffLeft < 0 && prevScroll > valY) {
+    cliffLeft.style.left = initialCliffLeft + valY * 0.9 + "px";
+  } else {
+    cliffLeft.style.left = initialCliffLeft - valY * 0.9 + "px";
+  }
+
+  if (initialCliffRight < 0 && prevScroll < valY) {
+    cliffRight.style.right = initialCliffRight - valY * 0.4 + "px";
+  } else if (initialCliffRight < 0 && prevScroll > valY) {
+    cliffRight.style.right = initialCliffRight + valY * 0.4 + "px";
+  } else {
+    cliffRight.style.right = initialCliffRight - valY * 0.4 + "px";
+  }
+
+  if (initialCliffAd < 0 && prevScroll < valY) {
+    cliffAd.style.bottom = `calc(${initialCliffAd} - ${valY * 0.5}px)`;
+  } else if (initialCliffAd < 0 && prevScroll > valY) {
+    cliffAd.style.bottom = `calc(${initialCliffAd} + ${valY * 0.5}px)`;
+  } else {
+    cliffAd.style.bottom = `calc(${initialCliffAd} - ${valY * 0.5}px)`;
+  }
+
+  if (initialAd < 0 && prevScroll < valY) {
+    ad.style.bottom = initialAd - valY * 0.4 + "px";
+  } else if (initialAd < 0 && prevScroll > valY) {
+    ad.style.bottom = initialAd + valY * 0.4 + "px";
+  } else {
+    ad.style.bottom = initialAd - valY * 0.4 + "px";
+  }
+
+  if (initialRockAd < 0 && prevScroll < valY) {
+    rockAd.style.bottom = initialRockAd - valY * 0.4 + "px";
+  } else if (initialRockAd < 0 && prevScroll > valY) {
+    rockAd.style.bottom = initialRockAd + valY * 0.4 + "px";
+  } else {
+    rockAd.style.bottom = initialRockAd - valY * 0.4 + "px";
+  }
+
+  if (initialHomeFloor < 0 && prevScroll < valY) {
+    homeFloor.style.top = initialHomeFloor - valY * 0.2 + "px";
+  } else if (initialHomeFloor < 0 && prevScroll > valY) {
+    homeFloor.style.top = initialHomeFloor + valY * 0.2 + "px";
+  } else {
+    homeFloor.style.top = initialHomeFloor + valY * 0.2 + "px";
+  }
 });
 
 updateParallax(0);
