@@ -36,6 +36,12 @@ window.addEventListener("mousemove", (e) => {
   updateParallax(e.clientX);
 });
 
+window.addEventListener("scroll", () => {
+  const titleTexts = document.querySelector(".title-text");
+  let valueY = window.scrollY + window.innerWidth / 2;
+  titleTexts.style.left = valueY + "px";
+});
+
 updateParallax(0);
 
 let timeLine = gsap.timeline();
