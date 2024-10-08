@@ -39,18 +39,21 @@ window.addEventListener("mousemove", (e) => {
 let prevScroll = window.scrollY;
 const titleTexts = document.querySelector(".title-text");
 const cliffLeft = document.querySelector(".cliff-left");
-
 const cliffRight = document.querySelector(".cliff-right");
 const cliffAd = document.querySelector(".cliff-adventure");
 const ad = document.querySelector(".adventure");
 const homeFloor = document.querySelector(".home-floor");
 const rockAd = document.querySelector(".rock-adventure");
+const buttonExplore = document.querySelector(".explore-button");
+
 const initialCliffLeft = parseFloat(getComputedStyle(cliffLeft).left);
 const initialCliffAd = getComputedStyle(cliffAd).bottom;
 const initialAd = parseFloat(getComputedStyle(ad).bottom);
 const initialRockAd = parseFloat(getComputedStyle(rockAd).bottom);
 const initialCliffRight = parseFloat(getComputedStyle(cliffRight).right);
 const initialHomeFloor = parseFloat(getComputedStyle(homeFloor).top);
+const initialButtonExplore = parseFloat(getComputedStyle(buttonExplore).left);
+
 window.addEventListener("scroll", () => {
   let valueY = window.scrollY + window.innerWidth / 2;
   let valY = window.scrollY;
@@ -102,6 +105,7 @@ window.addEventListener("scroll", () => {
   } else {
     homeFloor.style.top = initialHomeFloor + valY * 0.2 + "px";
   }
+  buttonExplore.style.left = valueY + "px";
 });
 
 updateParallax(0);
@@ -208,4 +212,33 @@ timeLine
       duration: 2.5,
     },
     "1"
+  )
+  .from(
+    ".explore-button",
+    {
+      opacity: 1,
+      y: 600,
+      duration: 2.5,
+    },
+    "1"
   );
+
+document
+  .getElementById("button-explore")
+  .addEventListener("mouseenter", function onEnt() {
+    console.log("mouse enter");
+    const blackArr = document.getElementById("arrow-right-black");
+    const whiteArr = document.getElementById("arrow-right-white");
+    blackArr.style.opacity = 0;
+    whiteArr.style.opacity = 1;
+  });
+
+document
+  .getElementById("button-explore")
+  .addEventListener("mouseleave", function onLeave() {
+    console.log("mouse leave");
+    const blackArr = document.getElementById("arrow-right-black");
+    const whiteArr = document.getElementById("arrow-right-white");
+    blackArr.style.opacity = 1;
+    whiteArr.style.opacity = 0;
+  });
