@@ -144,7 +144,7 @@ section{
     pointer-events: none;
 }
 
-.mission{
+.mission {
     z-index: 2;
     position: relative;
     display: flex;
@@ -152,8 +152,8 @@ section{
     justify-content: center;
     align-items: center;
     height: 100vh;
-
 }
+
 
 .topMission{
     font-size: 2rem;
@@ -182,23 +182,27 @@ section{
 }
 
 .second {
+    position: relative;
     display: flex;
     align-items: center;
-    height: 100vh;
+    height: 110vh;
+    width: 100vw;
 }
 
 .container {
-    position: relative;
+    /* position: absolute; */
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #9CDBA6;
     height: 55vh;
-    width: 45vw;
+    width: 50vw;
     border-radius: 40px;
-    margin-left: 12.5vw;
-    transition: transform 1s ease, background-color 1s ease;
+    margin-left: 5vw;
+    transition: transform 2s ease-out, background-color 1s ease;
+    transform: translateX(-100vw); /* Initially off-screen */
 }
+
 
 .container h1 {
     font-size: 4.5rem;
@@ -226,6 +230,62 @@ section{
     transform: scale(1);
     opacity: 1;
 }
+
+.bulbcontainer{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+    transform-origin: top;
+    width: 50vw;
+    height: 110vh;
+    animation: swing 3s ease-in-out infinite;
+}
+
+.wire{
+    width: 4px;
+    height: 250px;
+    background-color: black;
+    position: relative;
+    z-index: 1;
+}
+
+.connector{
+    background-color: #292929;
+    width: 30px;
+    aspect-ratio: 4/5;
+    border-radius: 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 2;
+}
+
+.grove{
+    background: #424242;
+    width: 34px;
+    height: 3px;
+    z-index: 3;
+}
+
+.bulb{
+    margin-top: -2px;
+    width: 92px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: rgb(173, 173, 173); 
+    transition: background 0.5s ease, border 0.5s ease, box-shadow 0.5s ease;
+}
+
+.highlight {
+
+    background: yellow;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 0px 150px 75px rgba(245, 223, 77, 1);
+}
+
 
 .third{
     display: flex;
@@ -267,4 +327,16 @@ section{
 
 .desc h2{
     margin-bottom: 3vh;
+}
+
+@keyframes swing{
+    0%{
+        transform: rotate(15deg);
+    }
+    50%{
+        transform: rotate(-15deg);
+    }
+    100%{
+        transform: rotate(15deg);
+    }
 }
