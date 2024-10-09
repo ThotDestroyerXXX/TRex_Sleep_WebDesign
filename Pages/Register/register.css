@@ -1,0 +1,257 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scrollbar-width : none;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: sans-serif;
+    background-color: #DEF9C4;
+}
+
+.book {
+    position: relative;
+    width: 30vw;
+    height: 80vh;
+    transition: transform 0.5s;
+    transform: translateX(50%);
+}
+
+.paper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    perspective: 1500px;
+}
+
+.front,
+.back {
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-origin: left;
+    transition: transform 0.5s;
+    border-radius: 0 30px 30px 0;
+}
+
+.front {
+    z-index: 1;
+    backface-visibility: hidden;
+}
+
+.back {
+    z-index: 0;
+    
+}
+
+.front-content,
+.back-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.back-content {
+    transform: rotateY(180deg)
+}
+
+.flipped .front,
+.flipped .back {
+    transform: rotateY(-180deg);
+}
+
+
+.regis{
+    position: relative;
+    width: 90%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dataRegis{
+    position: absolute;
+    bottom: 0;
+    width: 90%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.logos{ 
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.fillData{
+    width: 100%;
+    margin-top: 5%;
+    background-color: antiquewhite;
+    display: flex;
+    align-items: center;
+    border-radius: 40px;
+}
+
+.title{
+    margin-bottom: 10%;
+}
+
+.loginData{
+    width: 100%;
+    margin-top: 5%;
+    background-color: antiquewhite;
+    display: flex;
+    align-items: center;
+    border-radius: 40px;
+}
+
+.fillData .bx{
+    padding-left: 10px;
+}
+
+.loginData .bx{
+    padding-left: 10px;
+}
+
+.logos .bx{
+    padding:10px;
+    margin: 0 1vw;
+    font-size: 1.25em;
+    border: 2px solid #468585;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    z-index: 100;
+}
+
+.logos .bx:hover{
+    background-color: #468585;
+    transform: scale(0.9);
+}
+
+input{
+    width: 88%;
+    padding: 12px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.login{
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signin-btn{
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    width: 100%;
+    border-radius: 40px;
+    background-color: aliceblue;
+    margin-top: 30px;
+}
+
+.or{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.line{
+    width: 45%;
+    height: 1px;
+    background-color: black;
+    margin: 0 5px;
+}
+
+.text{
+    margin: 2vh 0;
+}
+
+.logTop .bx{
+    position: absolute;
+    left: 1vw;
+    top: 3vh;
+    font-size: 1.5em;
+}
+
+.login-btn{
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    width: 100%;
+    border-radius: 40px;
+    background-color: aliceblue;
+    margin-top: 30px;
+}
+
+button {
+    border: none;
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    cursor: pointer;
+    margin: 10px;
+    transform: translateX(180px);
+}
+
+.front2{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 0 30px 30px 0;
+}
+
+.back2{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px 0 0 30px;
+}
+#next-btn,
+#prev-btn {
+    text-decoration: underline;
+}
+
+.signUp{
+    margin-top: 3vh;
+}
+
+.signUp p{
+    width: 100%;
+    display: inline;
+}
+
+#p1 {
+    z-index: 1; 
+}
+
+#p2 {
+    z-index: 2; 
+}
+
+#p3 {
+    z-index: 1; 
+}
