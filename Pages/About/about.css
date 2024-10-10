@@ -187,6 +187,9 @@ section{
     align-items: center;
     height: 110vh;
     width: 100vw;
+    background: linear-gradient(to bottom, #003329, #DEF9C4);
+    /* background: linear-gradient(0deg, #DEF9C4 0%, #DEF9C4 50%, #003329 100%); */
+    border-top: 7vh solid #003329;
 }
 
 .container {
@@ -194,13 +197,13 @@ section{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #9CDBA6;
+    background-color: #50B498;
     height: 55vh;
     width: 50vw;
     border-radius: 40px;
     margin-left: 5vw;
-    transition: transform 2s ease-out, background-color 1s ease;
-    transform: translateX(-100vw); /* Initially off-screen */
+    transition: transform 1.5s ease-out, background-color 1s ease;
+    transform: translateX(-100vw);
 }
 
 
@@ -245,7 +248,7 @@ section{
 
 .wire{
     width: 4px;
-    height: 250px;
+    height: 40vh;
     background-color: black;
     position: relative;
     z-index: 1;
@@ -290,9 +293,15 @@ section{
 .third{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     gap: 7.5vh;
+    height: 140vh;
+    position: relative;
+}
+
+.insight{
+    font-size: 4rem;
+    margin: 2vh 0 0 0;
 }
 
 .row{
@@ -315,18 +324,98 @@ section{
 .pic{
     width: auto;
     height: 18vh;
-    margin-bottom: 1vh;
+    margin-left: auto;
+    margin-right: 3vw;
+    font-size: 7.5rem;
 }
 
 .desc{
     width: auto;
     height: 17vh;
-    margin-top: 1vh;
     text-align: justify;
 }
 
 .desc h2{
     margin-bottom: 3vh;
+}
+
+.team{
+    font-size: 3rem;
+    margin-left: 5vh;
+}
+
+.teamCont{
+    position: relative;
+    width: 100vw;
+    height: 95vh;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.corner, .mid{
+    position: relative;
+    display: flex;
+    width: 30vw;
+    height: 55vh;
+    background-color: #9CDBA6;
+    padding: 5vh 0 5vh 5vh;
+}
+
+.mid{
+    margin-top: 20vh;
+}
+
+.corner{
+    margin-top: 10vh;
+}
+
+.left{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.leftPic{
+    width: 100%;
+    height: 80%;
+    background-color: aqua;
+}
+
+.leftName{
+    width: 100%;
+    height: 10%;
+    margin-top: 2vh;
+}
+
+.right{
+    margin-left: 5%;
+    position: relative;
+    width: 20%;
+    height: 95%;
+
+}
+
+.box{
+    position: absolute;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+}
+.social{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    bottom: 0;
+}
+
+.social .fa-brands{
+    font-size: 2rem;
 }
 
 @keyframes swing{
