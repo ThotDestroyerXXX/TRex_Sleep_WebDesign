@@ -69,3 +69,21 @@ document.querySelector('.container').addEventListener('mouseover', function() {
 document.querySelector('.container').addEventListener('mouseout', function() {
     document.querySelector('.bulb').classList.remove('highlight');
 });
+
+document.querySelectorAll('.box').forEach((box) => {
+    box.addEventListener('click', function() {
+        const leftPic = this.closest('.corner, .mid').querySelector('.leftPic');
+        const img = leftPic.querySelector('img');
+        const text = leftPic.querySelector('p');
+
+        if (!img.classList.contains('slide-left')) {
+            // First click: Slide the image out to the left
+            img.classList.add('slide-left');
+            img.classList.remove('slide-right');
+        } else {
+            // Second click: Slide the image back to the original position
+            img.classList.remove('slide-left');
+            img.classList.add('slide-right');
+        }
+    });
+});

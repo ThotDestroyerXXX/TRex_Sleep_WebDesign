@@ -10,9 +10,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-
     font-family: sans-serif;
     background-color: #DEF9C4;
+    color: white
 }
 
 .book {
@@ -43,6 +43,7 @@ body {
     transform-origin: left;
     transition: transform 0.5s;
     border-radius: 0 30px 30px 0;
+    overflow: hidden;
 }
 
 .front {
@@ -62,17 +63,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #9CDBA6;
 }
 
 .back-content {
-    transform: rotateY(180deg)
+    transform: rotateY(180deg);
 }
 
 .flipped .front,
 .flipped .back {
     transform: rotateY(-180deg);
 }
-
 
 .regis{
     position: relative;
@@ -103,7 +104,7 @@ body {
 .fillData{
     width: 100%;
     margin-top: 5%;
-    background-color: antiquewhite;
+    background-color: #50B498;
     display: flex;
     align-items: center;
     border-radius: 40px;
@@ -116,7 +117,7 @@ body {
 .loginData{
     width: 100%;
     margin-top: 5%;
-    background-color: antiquewhite;
+    background-color: #50B498;
     display: flex;
     align-items: center;
     border-radius: 40px;
@@ -134,7 +135,7 @@ body {
     padding:10px;
     margin: 0 1vw;
     font-size: 1.25em;
-    border: 2px solid #468585;
+    border: 2px solid #50B498;
     border-radius: 50px;
     cursor: pointer;
     transition: 0.2s ease-in-out;
@@ -142,7 +143,7 @@ body {
 }
 
 .logos .bx:hover{
-    background-color: #468585;
+    background-color: #50B498;
     transform: scale(0.9);
 }
 
@@ -168,7 +169,7 @@ input{
     justify-content: center;
     width: 100%;
     border-radius: 40px;
-    background-color: aliceblue;
+    background-color: rgb(255, 255, 255);
     margin-top: 30px;
 }
 
@@ -182,7 +183,7 @@ input{
 .line{
     width: 45%;
     height: 1px;
-    background-color: black;
+    background-color: rgb(255, 255, 255);
     margin: 0 5px;
 }
 
@@ -203,7 +204,7 @@ input{
     justify-content: center;
     width: 100%;
     border-radius: 40px;
-    background-color: aliceblue;
+    background-color: rgb(255, 255, 255);
     margin-top: 30px;
 }
 
@@ -254,4 +255,42 @@ button {
 
 #p3 {
     z-index: 1; 
+}
+
+.signin-btn,
+.login-btn {
+    color: black; /* Override to make text color black */
+}
+
+.logos .bx {
+    color: black; /* Set icon text color to black */
+}
+
+.fillData input,
+.loginData input {
+    color: white; /* Set input text color to white */
+}
+
+.fillData input::placeholder,
+.loginData input::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* Set placeholder text color to a lighter white */
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+    -webkit-text-fill-color: white !important;
+    background-clip: text;
+}
+
+.return{
+    position: absolute;
+    left: 1vw;
+    top: 1vh;
+    color: #50B498;
+    font-size: 3rem;
+}
+
+.fillData input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    color: white; 
 }
