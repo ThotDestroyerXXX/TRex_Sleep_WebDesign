@@ -1,4 +1,3 @@
-let bg2 = document.getElementById('bg2');
 let mission = document.getElementById('mission');
 let hill2 = document.getElementById('hill2');
 let hill3 = document.getElementById('hill3');
@@ -13,7 +12,7 @@ window.addEventListener('scroll', () => {
 
     // Parallax scrolling effects for the first section
     mission.style.marginTop = value * 0.15 + 'vh';
-    bg2.style.marginTop = value * -0.1 + 'vh';
+    // bg2.style.marginTop = value * -0.1 + 'vh';
     hill2.style.left = value * -0.3 + 'vh';
     hill4.style.left = value * -0.3 + 'vh';
     hill5.style.left = value * 0.5 + 'vh';
