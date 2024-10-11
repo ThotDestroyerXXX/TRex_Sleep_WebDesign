@@ -55,6 +55,7 @@ const initialHomeFloor = parseFloat(getComputedStyle(homeFloor).top);
 const initialButtonExplore = parseFloat(getComputedStyle(buttonExplore).left);
 
 window.addEventListener("scroll", () => {
+  // console.log(window.scrollY);
   let valueY = window.scrollY + window.innerWidth / 2;
   let valY = window.scrollY;
   titleTexts.style.left = valueY + "px";
@@ -106,7 +107,63 @@ window.addEventListener("scroll", () => {
     homeFloor.style.top = initialHomeFloor + valY * 0.2 + "px";
   }
   buttonExplore.style.left = valueY + "px";
+
+  const containerTop = document
+    .getElementById("section-2")
+    .getBoundingClientRect().top;
+  const scrollTop = window.scrollY;
+
+  // Top Y coordinate relative to the entire document
+  const containerTopY = containerTop + scrollTop;
+  console.log(containerTopY);
+  if (window.scrollY <= containerTopY) {
+    const textSect2 = document.querySelector(".text-future h1");
+    textSect2.style.fontSize = (window.scrollY / containerTopY) * 7 + "vw";
+  } else {
+    if (window.scrollY >= containerTopY + 100) {
+      const textSect1 = document.getElementById("text-initial");
+      const textSect2 = document.getElementById("text-slide");
+      const cardWrap = document.querySelector(".card-wrap");
+      const cardJoin = document.querySelector(".join-now");
+
+      textSect1.style.transform = "translateX(50%)";
+      textSect2.style.transform = "translateX(50%)";
+      cardWrap.style.opacity = 0;
+
+      // Add display:none after opacity transition completes
+      cardWrap.addEventListener(
+        "transitionend",
+        () => {
+          cardWrap.style.display = "none";
+          cardJoin.style.display = "flex";
+          cardJoin.style.opacity = 1;
+        },
+        { once: true }
+      );
+    } else if (window.scrollY <= containerTopY + 100) {
+      const textSect1 = document.getElementById("text-initial");
+      const textSect2 = document.getElementById("text-slide");
+      const cardWrap = document.querySelector(".card-wrap");
+      const cardJoin = document.querySelector(".join-now");
+
+      textSect1.style.transform = "translateX(-50%)";
+      textSect2.style.transform = "translateX(-50%)";
+      cardJoin.style.opacity = 0;
+
+      cardJoin.addEventListener(
+        "transitionend",
+        () => {
+          cardWrap.style.display = "flex"; // Reset display to block when scrolling up
+          cardWrap.style.opacity = 1;
+          cardJoin.style.display = "none";
+        },
+        { once: true }
+      );
+    }
+  }
 });
+
+function changeSection() {}
 
 updateParallax(0);
 

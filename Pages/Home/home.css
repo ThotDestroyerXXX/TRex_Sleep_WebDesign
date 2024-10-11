@@ -208,26 +208,52 @@ body {
 #arrow-right-white:hover {
   opacity: 1;
 }
-
-.frame {
-  background: #def9c4;
-  width: 100%;
-  height: 100vh;
-  position: relative;
-  text-align: center;
-  overflow: hidden;
+#section-2 {
+  height: 140vh; /* Make sure the section is tall enough for scrolling */
 }
 
-.frame .sliders {
-  position: absolute;
-  width: 320px;
-  height: 180px;
-  top: 10%;
-  left: calc(50% - 160px);
+.frame {
+  background: #2c3080;
+  width: 100%;
+  height: 100vh;
+  position: sticky;
+  /* position: fixed; */
+  z-index: 10000;
+  /* text-align: center; */
+  overflow: hidden;
+  top: 0;
+}
 
-  transform-style: preserve-3d;
-  transform: perspective(1000px);
-  animation: rotateSlider 20s linear infinite;
+.text-future #text-initial {
+  width: 100%;
+  font-size: 7vw;
+  font-family: "Geologica", sans-serif;
+  color: white;
+  text-align: center;
+  position: absolute;
+  font-weight: 500;
+  letter-spacing: 0.1vw;
+  transition: 0.6s all ease-in-out;
+  top: 1rem;
+  left: 50%;
+  /* background-color: red; */
+  transform: translateX(-50%);
+}
+
+#text-slide {
+  width: 100%;
+  font-size: 7vw;
+  font-family: "Geologica", sans-serif;
+  color: white;
+  text-align: center;
+  position: absolute;
+  font-weight: 500;
+  letter-spacing: 0.1vw;
+  transition: 0.6s all ease-in-out;
+  top: 1rem;
+  left: -50%;
+  /* background-color: red; */
+  transform: translateX(-50%);
 }
 
 @keyframes rotateSlider {
@@ -239,21 +265,301 @@ body {
   }
 }
 
-.frame .sliders .item {
-  position: absolute;
-  inset: 0 0 0 0;
-  transform: rotateY(
-      calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
-    )
-    translateZ(550px);
-  background-color: red;
-  border: 5px solid black;
+#glass {
+  width: 97%;
+  height: 95%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: relative;
+  background: rgba(162, 162, 162, 0.3);
+  backdrop-filter: blur(50px);
+  border-radius: 20px;
+  border: 1px solid white;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  /* align-items: center; */
+  gap: 2rem;
 }
 
-.frame .sliders .item img {
+.card-wrap {
+  /* background-color: red; */
+  width: 100%;
+  height: 70%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  top: 3rem;
+  overflow-x: hidden;
+  /* background-color: red; */
+  white-space: nowrap;
+  position: relative;
+  transition: 0.3s all ease-in-out;
+  opacity: 1;
+}
+
+.card-slide {
+  width: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  animation: slide 20s linear infinite;
+}
+
+.card {
+  background: rgba(125, 125, 125, 0.3);
+  backdrop-filter: blur(60px);
+  border: 2px solid white;
+  width: 20rem;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  padding: 1rem 1rem 2rem 1rem;
+  flex-shrink: 0;
+  gap: 1rem;
+  font-family: "Geologica", sans-serif;
+  color: white;
+}
+
+.card-title {
+  font-size: 1.3em;
+}
+
+.card-text {
+  white-space: normal;
+}
+
+.circle {
+  width: 12rem;
+  height: 12rem;
+  /* border-radius: 50%; */
+}
+
+.circle img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 50%;
+}
+
+.person-name {
+  color: white;
+  font-size: 1.5em;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.card-wrap:before,
+.card-wrap:after {
+  position: absolute;
+  top: 0;
+
+  width: 250px;
+  height: 100%;
+
+  content: "";
+  z-index: 2;
+}
+
+.card-wrap:before {
+  left: 0;
+  background: linear-gradient(
+    to left,
+    rgba(162, 162, 162, 0),
+    rgba(162, 162, 162, 1)
+  );
+}
+
+.card-wrap:after {
+  right: 0;
+  background: linear-gradient(
+    to right,
+    rgba(162, 162, 162, 0),
+    rgba(162, 162, 162, 1)
+  );
+}
+
+.join-now {
+  position: absolute;
+  width: 95%;
+  height: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  left: 50%;
+  top: 60%;
+  transform: translateX(-50%) translateY(-50%);
+  /* background-color: red; */
+  transition: 0.3s all ease-in-out;
+  opacity: 0;
+  font-family: "Geologica", sans-serif;
+}
+
+.tilt-card {
+  background: rgba(125, 125, 125, 0.3);
+  backdrop-filter: blur(60px);
+  border: 2px solid white;
+  color: white;
+  width: 25rem;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  padding: 2rem 1rem 2rem 1rem;
+}
+
+.tilt-card .card-content {
+  justify-content: space-between;
+}
+
+footer {
+  position: relative;
+  width: 100%;
+  background-color: #ffffff;
+  /* color: #ffffff; */
+  /* padding-top: 5%; */
+}
+
+.footerCont {
+  position: relative;
+  width: 100%;
+  padding: 7.5% 0;
+  display: flex;
+  border-top: 1.5vh solid black;
+}
+
+.leftFoot {
+  width: 40%;
+  margin-left: 5vw;
+}
+
+.leftFoot h1 {
+  font-size: 2.5em;
+}
+
+.rightFoot {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  height: 40%;
+  right: 8vw;
+  cursor: pointer; /* Makes it clear that this is interactive */
+}
+
+.rightFoot h1 {
+  position: relative; /* Necessary for positioning the pseudo-element */
+  transition: color 0.3s ease-in-out;
+}
+
+.rightFoot h1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px; /* Adjust to position the underline slightly below the text */
+  width: 0%;
+  height: 2px; /* Thickness of the underline */
+  background-color: #000000; /* Color of the underline */
+  transition: width 0.6s ease-in-out; /* Smooth and slower transition for the underline */
+}
+
+.rightFoot:hover h1::after {
+  width: 100%; /* Expands the underline on hover */
+}
+
+.rightFoot .fa-solid {
+  transition: transform 0.6s ease-in-out; /* Smooth and slower transition for movement */
+}
+
+.rightFoot:hover .fa-solid {
+  transform: translateX(2vw); /* Moves the icon slightly to the right */
+}
+
+.rightFoot h1 {
+  font-size: 3.5rem;
+}
+
+.rightFoot .fa-solid {
+  margin: 1vh 0 0 1rem;
+  font-size: 3rem;
+}
+
+.below {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 15vh;
+  padding-left: 5vw;
+  border-top: 0.5vh solid black;
+}
+
+.below .fa-brands {
+  margin-left: 3vw;
+  font-size: 2rem;
+}
+
+.dot {
+  border-radius: 50%;
+  border: 7px solid rgb(112, 112, 112);
+  margin: 0 3vw;
+}
+
+.below li {
+  list-style: none;
+  transition: color 0.3s;
+  margin-right: 2vw;
+  position: relative; /* Necessary for positioning the pseudo-element */
+}
+
+.below li a {
+  font-size: 1.2rem;
+  text-decoration: none; /* No underline initially */
+  color: black;
+  transition: color 0.3s ease-in-out;
+}
+
+.below li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px; /* Adjust to position the underline slightly below the text */
+  width: 0%;
+  height: 2px; /* Thickness of the underline */
+  background-color: #000000; /* Color of the underline */
+  transition: width 0.6s ease-in-out; /* Smooth and slower transition for the underline */
+}
+
+.below li a:hover::after {
+  width: 100%; /* Expands the underline on hover */
+}
+
+.logoCont {
+  position: absolute;
+  width: 5rem;
+  height: 5rem;
+  right: 2vw;
+}
+
+.logoCont img {
+  width: 100%; /* Ensure the image fills the container */
+  height: 100%; /* Ensure the image fills the container */
+  object-fit: contain; /* Maintain the image's aspect ratio */
 }
 
 @media (max-width: 1320px) {
