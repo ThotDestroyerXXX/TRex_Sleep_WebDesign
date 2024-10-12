@@ -5,7 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Explore</title>
     <link rel="stylesheet" href="explore.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="navbar.css">
+    <script src="jquery.min.js"></script>
     
 </head>
     <body>
@@ -17,10 +22,10 @@
             </div>
 
             <div class="navbar" id="navbar">
-                <li><a href="">Home</a></li>
-                <li><a href="">Explore</a></li>
+                <li><a href="../Home/home.html">Home</a></li>
+                <li><a href="../Explore/explore.html">Explore</a></li>
                 <li><a href="">Promotion</a></li>
-                <li><a href="">About</a></li>
+                <li><a href="../About/about.html">About</a></li>
             </div>
 
             <div class="navbar-register">
@@ -28,23 +33,186 @@
             </div>
 
         </div>
+        
+        <section class="page-parallax" id="pageParallax">
 
-        <section class="page">
-            <div class="container">
-                <div class="box"></div>
-                <div class="box"></div>
-                <div class="box"></div>
-                <div class="box"></div>
-                <div class="box"></div>
-                <div class="box"></div>
+            <span id="summon">Click Anywhere For bubble</span>
+
+            <canvas id="canvas" style="position:absolute; z-index:3;"></canvas>
+            <div class="content">
+                <h1>Explore Now</h1>
+                <h1>Explore Now</h1>
             </div>
+            
+            <div class="ikan1">
+                <img src="../../Assets/explore/ikan1.png" alt=""style=" bottom: 12vh; left: 0.5vw;">
+                <img src="../../Assets/explore/ikan1.png" alt="" style=" bottom: 22vh; left: 4vw;">
+                <img src="../../Assets/explore/ikan1.png" alt="" style=" bottom: 15vh; right: 2vh;">
+            </div>
+
+                <img src="../../Assets/explore/kapal_selam.png" alt="" class="kapal-selam">
+            
+                <div class="arrow-down" onClick="document.getElementById('middle').scrollIntoView();">
+                     <img src="../../Assets/explore/arrowDown.png" alt="">
+                </div>
+            
+        </section>
+        
+        
+        <section class="page" id="middle">
+
+            <div class="container">
+                <div class="box">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front" style="color: wheat;">
+                            <img src="../../Assets/explore/question_mark.png" alt="">
+                        </div>
+                        <div class="flip-card-back" style="color: wheat;">
+
+                            <div class="box">
+                                <img src="../../Assets/explore/lelab.jpg" alt="">
+                            </div>
+
+                            <div class="info">
+                                The website "Le Lab" features a sleek, modern design with a strong emphasis on visual storytelling. <br> 
+                                It presents itself as a creative studio specializing in audiovisual content, drone cinematography, 
+                                and immersive FPV (First-Person View) experiences.
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front" style="color: wheat;">
+                            <img src="../../Assets/explore/question_mark.png" alt="">
+                        </div>
+
+                        <div class="flip-card-back" style="color: wheat;">
+                            <div class="box">
+                                <img src="../../Assets/explore/spacers.jpg" alt="">
+                            </div>
+
+                            <div class="info">
+                                The site emphasizes simplicity and usability, with clear sections showcasing different assets, making it appealing for digital designers. 
+                                The vivid imagery is highlighted by minimal text, allowing the illustrations to stand out. 
+                                This design is perfect for creative projects, such as apps or advertising campaigns, offering a whimsical and interactive feel.
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front" style="color: wheat;">
+                            <img src="../../Assets/explore/question_mark.png" alt="">
+                        </div>
+                        <div class="flip-card-back" style="color: wheat;">
+                            <div class="box">
+                                <img src="../../Assets/explore/cecraft.jpg" alt="">
+                            </div>
+
+                            <div class="info">
+                                "Cecraft.io" offers a web design approach focused on simplicity and functionality. 
+                                Their design usually revolves around minimalistic layouts, intuitive navigation, and clean typography, 
+                                making the user experience straightforward and accessible. 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front" style="color: wheat;">
+                            <img src="../../Assets/explore/question_mark.png" alt="">
+                        </div>
+                        <div class="flip-card-back" style="color: wheat;">
+                            <div class="box">
+                                <img src="../../Assets/explore/web3.jpg" alt="">
+                            </div>
+
+                            <div class="info">
+                                The web design of blockchains.com is modern and user-centric, emphasizing clarity and accessibility. 
+                                The layout features a prominent hero section with bold messaging about digital identity and user autonomy. 
+                                The use of large images and concise text enhances readability, while sections are clearly defined to guide users through the content.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front" style="color: wheat;">
+                            <img src="../../Assets/explore/question_mark.png" alt="">
+                        </div>
+                        <div class="flip-card-back" style="color: wheat;">
+                            <div class="box">
+                                <img src="../../Assets/explore/gemini.jpg" alt="">
+                            </div>
+
+                            <div class="info">
+                                The web design of the Gemini page on Lusion showcases an innovative and interactive approach, focusing on visual storytelling. 
+                                It features dynamic 3D elements that emphasize motion and style, creating an engaging user experience. 
+                                The layout is minimalist, allowing the visual content to take center stage, with smooth animations enhancing the overall aesthetic.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front" style="color: wheat;">
+                            <img src="../../Assets/explore/question_mark.png" alt="">
+                        </div>
+                        <div class="flip-card-back" style="color: wheat;">
+                            <div class="box">
+                                <img src="../../Assets/explore/three.jpg" alt="">
+                            </div>
+
+                            <div class="info">
+                                The Three.js Journey website features a clean and modern design, emphasizing usability and visual engagement. 
+                                The layout is structured, with a clear hierarchy that guides users through the course offerings.
+                                 Large images and bold typography enhance readability, while interactive elements encourage user exploration. 
+                                 The color palette is professional, promoting a sense of trust and creativity. 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <img src="../../Assets/explore/anglerfish.jpg" alt="" class="angler-fish">
+
         </section>
 
-        <section class="">
-
-        </section>
-
+        <footer>
+            <div class="footerCont">
+              <div class="leftFoot">
+                <h1>
+                  Do you love what we do and want to help us revolutionize the world
+                  of web design?
+                </h1>
+              </div>
+              <div class="rightFoot">
+                <h1>Get in touch</h1>
+                <i class="fa-solid fa-angles-right"></i>
+              </div>
+            </div>
+            <div class="below">
+              <h1>Follow Us</h1>
+              <i class="fa-brands fa-instagram"></i>
+              <i class="fa-brands fa-facebook"></i>
+              <i class="fa-brands fa-linkedin"></i>
+              <i class="fa-brands fa-whatsapp"></i>
+              <div class="dot"></div>
+              <li><a href="../Home/home.html">Home</a></li>
+              <li><a href="../Explore/explore.html">Explore</a></li>
+              <li><a href="../About/about.html">About</a></li>
+              <li><a href="../Register/register.html">Register</a></li>
+              <div class="logoCont">
+                <img src="../../Assets/Logo Trex.png" alt="" />
+              </div>
+            </div>
+          </footer>
 
         <script src="navbar.js"></script>
+        <script src="explore.js"></script>
+        <script src="canvas.js"></script>
     </body>
 </html>

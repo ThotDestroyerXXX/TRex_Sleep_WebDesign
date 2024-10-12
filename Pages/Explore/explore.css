@@ -4,19 +4,523 @@
     box-sizing: border-box;
     cursor: url('dino2.cur'),auto;
     scrollbar-width: none;
+    scroll-behavior: smooth;
+    
 }
+
+/* body{
+    background: linear-gradient(to bottom, rgb(23, 131, 158),rgb(27, 64, 151),rgb(5, 5, 87));
+} */
 
 .page{
     width: 100vw;
-    height: 110vh;
-    background-color: rgb(144, 36, 36);
+    height: 140vh;
+    background: linear-gradient(to bottom, rgb(5, 5, 87),rgb(1, 1, 33));
     display: flex;
     justify-content: center;
+}
+
+#canvas{
+    width: 100%;
+    height: 100%;
+}
+
+.page-parallax{
+    width: 100vw;
+    height: 110vh;
+    background: linear-gradient(to bottom, rgb(23, 131, 158),rgb(27, 64, 151),rgb(5, 5, 87));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: none;
+    position: relative;
+}
+
+.page-parallax span{
+    position: absolute;
+    top: 26vh;
+    font-size: 60px;
+    color: white;
+}
+
+.hide{
+    display: none;
+}
+
+.content {
+	position: relative;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid black; */
+    text-align: center;
+    z-index: 2;
+}
+
+.content h1 {
+    width: 100%;
+    color: #fff;
+    /* border: 1px solid black; */
+	font-size: 6em;
+	position: absolute;
+    margin-left: 50vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	transform: translate(-50%, -50%);
+}
+
+.content h1:nth-child(1) {
+	color: transparent;
+	-webkit-text-stroke: 2px #ffffff;
+}
+
+.content h1:nth-child(2) {
+	color: #4df0ff;
+	animation: animate 4s ease-in-out infinite;
+}
+
+@keyframes animate {
+	0%,
+	100% {
+		clip-path: polygon(
+			0% 45%,
+			16% 44%,
+			33% 50%,
+			54% 60%,
+			70% 61%,
+			84% 59%,
+			100% 52%,
+			100% 100%,
+			0% 100%
+		);
+	}
+
+	50% {
+		clip-path: polygon(
+			0% 60%,
+			15% 65%,
+			34% 66%,
+			51% 62%,
+			67% 50%,
+			84% 45%,
+			100% 46%,
+			100% 100%,
+			0% 100%
+		);
+	}
+}
+
+.kapal-selam{
+    position: absolute;
+    margin-top: 40vh;
+    width: 20vw;
+    height: 50vh;
+    animation: toRight 30s ease-in infinite;
+    cursor:not-allowed;
+}
+
+@keyframes toRight {
+    0%{
+        left: -20%;
+        margin-top: -80vh;
+    }
+    10%{
+        margin-top: -50vh;
+    }
+    20%{
+        margin-top: -60vh;
+    }
+    30%{
+        margin-top: -30vh;
+    }
+    49%{
+        left: 120%;
+        transform: scaleX(1);
+        margin-top: 0vh;
+    }
+    50%{
+        left: 120%;
+        transform: scaleX(-1);
+        margin-top: 30vh;
+    }
+    70%{
+        margin-top: 20vh;
+    }
+    80%{
+        margin-top: 50vh;
+    }
+    90%{
+        margin-top: 20vh;
+    }
+    100%{
+        left: -20%;
+        transform: scaleX(-1);
+        margin-top: -80vh;
+    }
+}
+
+@keyframes toLeft {
+    0%{
+        left: 120%;
+        margin-top: 70vh;
+    }
+    49%{
+        left: -20%;
+        transform: scaleX(1);
+    }
+    50%{
+        left: -20%;
+        margin-top: 70vh;
+        transform: scaleX(-1);
+    }
+    100%{
+        left: 120%;
+        margin-top: 30vh;
+        transform: scaleX(-1);
+    }
+}
+
+.ikan1{
+    position: absolute;
+    margin-bottom: 70vh;
+    width: 20vw;
+    height: 50vh;
+    animation: toLeft 25s ease-in infinite;
+    cursor: not-allowed;
+}
+
+.ikan1 img{
+    position: absolute;
+    width: 6.5vw;
+    height: 8vh;
+}
+
+.arrow-down{
+    position: absolute;
+    margin-top: 40vh;
+    min-width: 25vh;
+    min-height: 18vh;
+    cursor: pointer;
+    z-index: 4;
+    animation: rotating 2.2s linear infinite;
+    
+}
+
+.arrow-down:hover img{
+    transform: scaleX(-1);
+}
+
+.arrow-down img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform: rotateY(20deg);
+    transition: 1s;
+    filter: drop-shadow(5px 5px 5px #1048e2);
+    object-fit: cover;
+}
+
+
+
+
+
+@keyframes rotating {
+    0%{
+        transform: translateY(2vh);
+    }
+    50%{
+        transform: translateY(6vh);
+    }
+    
+    100%{
+        transform: translateY(2vh);
+    }
 }
 
 .container{
     width: 90%;
     height: 100%;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8rem;
+}
+
+.box{
+    width: 23vw;
+    max-height: 60vh;
+    perspective: 800px;
+}
+
+.flip-card-inner{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0  rgba(0,0,0,0.2);
+}
+
+.box:hover .flip-card-inner{
+    transform: rotateY(180deg);
+}
+
+.flip-card-front , .flip-card-back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.flip-card-front {
+    background-color: #ffffff10;
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+
+}
+
+.flip-card-front img{
+    max-width: 130%;
+    max-height: 100%;
+}
+  
+.flip-card-back {
+    background-color: #297fb928;
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    padding: 2vh;
+    gap: 3rem;
+    background-color: #06050c93;
+}
+
+.flip-card-back .box{
+    width: 100%;
+    height: 100%;
+    background-color: #f3f3f3;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.flip-card-back .box img{
+    width: 100%;
+    height: 100%;
+    transition: 1s;
+    filter:grayscale(0.8);
+}
+
+.flip-card-back .box img:hover {
+    transform: scale(1.1);
+    filter:grayscale(0);
+}
+
+.flip-card-back .info{
+    text-align: left;
+    font-size: 1vw;
+    min-width: 2vh;
+}
+
+.angler-fish{
+    position: absolute;
+    width: 15vw;
+    height: 28vh;
+    filter: drop-shadow(-60px -50px 80px #eaf185);
+    animation: toLeft2 22s linear infinite;
+    transition: 1s ease-in-out;
+}
+
+@keyframes toLeft2 {
+    0%{
+        left: 120%;
+        margin-top: 70vh;
+    }
+    49%{
+        left: -20%;
+        transform: scaleX(1);
+    }
+    50%{
+        left: -20%;
+        margin-top: 70vh;
+        transform: scaleX(-1);
+    }
+    100%{
+        left: 120%;
+        margin-top: 30vh;
+        transform: scaleX(-1);
+    }
+}
+
+/* .box{
+    position: absolute;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
     border: 1px solid black;
+} */
+
+/* .social{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    bottom: 0;
+}
+
+.social .fa-brands{
+    font-size: 2rem;
+} */
+
+@keyframes swing{
+    0%{
+        transform: rotate(15deg);
+    }
+    50%{
+        transform: rotate(-15deg);
+    }
+    100%{
+        transform: rotate(15deg);
+    }
+}
+
+footer{
+    position: relative;
+    width: 100%;
+    background-color: #ffffff;
+    /* color: #ffffff; */
+    /* padding-top: 5%; */
+}
+
+.footerCont{
+    position: relative;
+    width: 100%;
+    padding: 7.5% 0;
+    display: flex;
+    border-top: 1.5vh solid black;
+}
+
+.leftFoot{
+    width: 40%;
+    margin-left: 5vw;
+}
+
+.leftFoot h1{
+    font-size: 2.5em;
+}
+
+.rightFoot {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    height: 40%;
+    right: 8vw;
+    cursor: pointer; /* Makes it clear that this is interactive */
+}
+
+.rightFoot h1 {
+    position: relative; /* Necessary for positioning the pseudo-element */
+    transition: color 0.3s ease-in-out;
+}
+
+.rightFoot h1::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Adjust to position the underline slightly below the text */
+    width: 0%;
+    height: 2px; /* Thickness of the underline */
+    background-color: #000000; /* Color of the underline */
+    transition: width 0.6s ease-in-out; /* Smooth and slower transition for the underline */
+}
+
+.rightFoot:hover h1::after {
+    width: 100%; /* Expands the underline on hover */
+}
+
+.rightFoot .fa-solid {
+    transition: transform 0.6s ease-in-out; /* Smooth and slower transition for movement */
+}
+
+.rightFoot:hover .fa-solid {
+    transform: translateX(2vw); /* Moves the icon slightly to the right */
+}
+
+.rightFoot h1{
+    font-size: 3.5rem;
+}
+
+.rightFoot .fa-solid{
+    margin: 1vh 0 0 1rem;
+    font-size: 3rem;
+}
+
+.below{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 15vh;
+    padding-left: 5vw;
+    border-top: 0.5vh solid black;
+}
+
+.below .fa-brands{
+    margin-left: 3vw;
+    font-size: 2rem;
+}
+
+.dot{
+    border-radius: 50%;
+    border: 7px solid rgb(112, 112, 112);
+    margin: 0 3vw;
+}
+
+.below li {
+    list-style: none;
+    transition: color 0.3s;
+    margin-right: 2vw;
+    position: relative; /* Necessary for positioning the pseudo-element */
+}
+
+.below li a {
+    font-size: 1.2rem;
+    text-decoration: none; /* No underline initially */
+    color: black;
+    transition: color 0.3s ease-in-out;
+}
+
+.below li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* Adjust to position the underline slightly below the text */
+    width: 0%;
+    height: 2px; /* Thickness of the underline */
+    background-color: #000000; /* Color of the underline */
+    transition: width 0.6s ease-in-out; /* Smooth and slower transition for the underline */
+}
+
+.below li a:hover::after {
+    width: 100%; /* Expands the underline on hover */
+}
+
+
+.logoCont{
+    position: absolute;
+    width: 5rem;
+    height: 5rem;   
+    right: 2vw;
+}
+
+.logoCont img {
+    width: 100%; /* Ensure the image fills the container */
+    height: 100%; /* Ensure the image fills the container */
+    object-fit: contain; /* Maintain the image's aspect ratio */
 }
