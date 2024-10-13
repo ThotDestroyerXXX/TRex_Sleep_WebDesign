@@ -643,6 +643,10 @@ footer{
         font-size: 1.2rem;
     }
 
+    .navbar{
+        width: 55vw;
+    }
+
     .first img{
         width: 100%;
         height: 100%;
@@ -726,6 +730,10 @@ footer{
 @media (max-width: 480px) {
     .box-navbar {
         height: 10vh;
+    }
+
+    .navbar{
+        width: 55vw;
     }
 
     .navbar li {
