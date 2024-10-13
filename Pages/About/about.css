@@ -611,11 +611,6 @@ footer{
         width: 70vw;
     }
 
-    .navbar-register {
-        font-size: 1rem;
-        width: 15vw;
-    }
-
     .container {
         width: 90%;
         padding: 1.5rem;
@@ -646,11 +641,6 @@ footer{
 @media (max-width: 800px) {
     .navbar li {
         font-size: 1.2rem;
-    }
-
-    .navbar-register {
-        width: 12vw;
-        font-size: 1rem;
     }
 
     .first img{
@@ -740,11 +730,6 @@ footer{
 
     .navbar li {
         font-size: 1rem;
-    }
-
-    .navbar-register {
-        font-size: 0.9rem;
-        width: 15vw;
     }
     
     .first img{

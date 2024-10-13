@@ -300,19 +300,19 @@ document
     whiteArr.style.opacity = 0;
   });
 
-var lastScrollTop = 0;
-navbar = document.getElementById("navbar");
-regs = document.querySelector(".navbar-register");
-window.addEventListener("scroll", function () {
-  var scrollTop = window.scrollY || doucment.documentElement.scrollTop;
+// var lastScrollTop = 0;
+// navbar = document.getElementById("navbar");
+// regs = document.querySelector(".navbar-register");
+// window.addEventListener("scroll", function () {
+//   var scrollTop = window.scrollY || doucment.documentElement.scrollTop;
 
-  if (scrollTop > lastScrollTop) {
-    navbar.style.top = "-17vh";
-    regs.style.top = "-17vh";
-  } else {
-    console.log("masuk");
-    navbar.style.top = "0";
-    regs.style.top = "4vh";
-  }
-  lastScrollTop = scrollTop;
-});
+//   if (scrollTop > lastScrollTop) {
+//     navbar.style.top = "-17vh";
+//     regs.style.top = "-17vh";
+//   } else {
+//     console.log("masuk");
+//     navbar.style.top = "0";
+//     regs.style.top = "4vh";
+//   }
+//   lastScrollTop = scrollTop;
+// });
