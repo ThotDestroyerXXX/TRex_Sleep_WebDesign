@@ -71,6 +71,31 @@
     cursor: pointer;
 }
 
+.logoCont{
+    position: absolute;
+    width: 5rem;
+    height: 5rem;   
+    right: 2vw;
+}
+
+.logoCont img {
+    width: 100%; /* Ensure the image fills the container */
+    height: 100%; /* Ensure the image fills the container */
+    object-fit: contain; /* Maintain the image's aspect ratio */
+}
+
+.logo{
+    position: absolute;
+    width: 5rem;
+    height: 5rem;   
+    left: 2vw;
+}
+
+.logo img{
+    width: 100%; /* Ensure the image fills the container */
+    height: 100%; /* Ensure the image fills the container */
+    object-fit: contain; /* Maintain the image's aspect ratio */
+}
 
 
 .navbar li a::after{
