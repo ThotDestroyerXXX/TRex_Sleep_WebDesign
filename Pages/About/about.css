@@ -589,6 +589,19 @@ footer{
     object-fit: contain; /* Maintain the image's aspect ratio */
 }
 
+.logo{
+    position: absolute;
+    width: 5rem;
+    height: 5rem;   
+    left: 2vw;
+}
+
+.logo img{
+    width: 100%; /* Ensure the image fills the container */
+    height: 100%; /* Ensure the image fills the container */
+    object-fit: contain; /* Maintain the image's aspect ratio */
+}
+
 @media (max-width: 1024px) {
     .box-navbar {
         height: 12vh;
